@@ -5,7 +5,7 @@ void main() {
     MaterialApp(
       title: 'My flutter app',
       home:  Scaffold(
-        appBar: AppBar(title: const Text('Dashboard'),),
+        appBar: AppBar(title: const Text('TEst'),),
         body: const Center(
         child: Text(
           'Hello world',
