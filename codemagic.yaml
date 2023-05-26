@@ -1,12 +1,14 @@
 workflows:
   android-workflow:
-    triggering:
-        events:
-          - push
-        branch_patterns:
-          - pattern: master
-            include: false
     name: Android Workflow
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: '*'
+        - pattern: develop
+          include: false
+      cancel_previous_builds: true
     max_build_duration: 120
     environment:
       android_signing:
