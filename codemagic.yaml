@@ -6,7 +6,7 @@ workflows:
         - push
       branch_patterns:
         - pattern: '*'
-        - pattern: develop
+        - pattern: master
           include: false
       cancel_previous_builds: true
     max_build_duration: 120
