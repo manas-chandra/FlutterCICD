@@ -5,9 +5,7 @@ workflows:
       events:
         - push
       branch_patterns:
-        - pattern: '*'
         - pattern: master
-          include: false
       cancel_previous_builds: true
     max_build_duration: 120
     environment:
