@@ -7,8 +7,8 @@ on:
     branches:
     - master
 jobs:
-  test:
-    name: Test workflow
+  Andriod:
+    name: Android workflow
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -19,3 +19,18 @@ jobs:
       - name: Flutter analyze
         run: flutter analyze
       - run: flutter build apk
+      - uses: actions/upload-artifact@v1
+        with:
+          name: android-apk
+          path: build/app/outputs/apk/release/app-release.apk
+  AndriodTest:
+    name: Android workflow
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Flutter
+        uses: britannio/action-install-flutter@v1
+      - name: Get Packages
+        run: flutter pub get
+      - name: Flutter analyze
+        run: flutter analyze
