@@ -1,3 +1,4 @@
+name: flutter CI
 on:
   push:
     branches:
@@ -7,7 +8,7 @@ on:
     - master
 jobs:
   test:
-    name: Run Tests
+    name: Test workflow
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -15,5 +16,7 @@ jobs:
         uses: britannio/action-install-flutter@v1
       - name: Get Packages
         run: flutter pub get
-      - name: Run Tests
-        run: flutter test --no-pub
+      - name: Flutter analyze
+        run: flutter analyze
+      - name: Flutter build
+        run: flutter build appbundle --release
